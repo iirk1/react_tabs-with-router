@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { NavLink, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const tabs = [
   { id: 'tab-1', title: 'Tab 1', content: 'Some text 1' },
@@ -24,9 +24,7 @@ export const Tabs = () => {
                 key={tab.id}
                 className={classNames({ 'is-active': tabId === tab.id })}
               >
-                <NavLink to={`/tabs/${tab.id}`} end>
-                  {tab.title}
-                </NavLink>
+                <Link to={`/tabs/${tab.id}`}>{tab.title}</Link>
               </li>
             );
           })}
